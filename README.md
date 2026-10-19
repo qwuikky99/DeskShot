@@ -82,4 +82,5 @@ Has 5 health.
 
 ## Socials
 [Twitter](https://x.com/qwuikky99)
+
 [Discord server](https://discord.gg/23wHhVg5QW)
