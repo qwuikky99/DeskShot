@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://l6c4vaycepqm"]
+
+[node name="Control" type="Control" unique_id=77500118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1986548120]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 58.0
+offset_right = 786.0
+offset_bottom = 436.0
+current_tab = 2
+tabs_rearrange_group = 1
+
+[node name="Visual" type="TabContainer" parent="TabContainer" unique_id=1163372550]
+visible = false
+layout_mode = 2
+drag_to_rearrange_enabled = true
+tabs_rearrange_group = 1
+metadata/_tab_index = 0
+
+[node name="Audio" type="TabContainer" parent="TabContainer" unique_id=183337501]
+visible = false
+layout_mode = 2
+drag_to_rearrange_enabled = true
+tabs_rearrange_group = 1
+metadata/_tab_index = 1
+
+[node name="idk man" type="TabContainer" parent="TabContainer" unique_id=1804130131]
+layout_mode = 2
+drag_to_rearrange_enabled = true
+tabs_rearrange_group = 1
+metadata/_tab_index = 2
