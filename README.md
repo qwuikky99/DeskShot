@@ -79,3 +79,7 @@ A Sneaky is an ordinary-sized, green blob. They're just like a Normal, aside fro
 When touched, deals 3 damage.
 
 Has 5 health.
+
+## Socials
+[Twitter](https://x.com/qwuikky99)
+[Discord server](https://discord.gg/23wHhVg5QW)
