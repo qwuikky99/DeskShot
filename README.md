@@ -1,6 +1,8 @@
 # DeskShot
 DeskShot is a top-down shooter indie Godot game where you, Player, defend yourself from different enemies.
 
+I'm pretty sure you can run it outside of Windows with Wine but don't quote me on that lol
+
 ## Enemy stat breakdown
 Health - the amount of damage an enemy must take before it dies. Can be increased if an enemy accidentally picks up a Heal.
 
