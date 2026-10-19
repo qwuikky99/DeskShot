@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bip2ndqtcxne2"]
+
+[ext_resource type="Script" uid="uid://dnadbv0f8ihva" path="res://assets/scenes/game/scripts/autoload/global.gd" id="1_6q3x5"]
+
+[node name="global" type="Node2D" unique_id=1565191045]
+script = ExtResource("1_6q3x5")

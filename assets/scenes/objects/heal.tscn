@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cs264boe6j5j8"]
+
+[ext_resource type="Script" uid="uid://b2w766ab3qj6d" path="res://assets/scenes/objects/scripts/gameplay/heal.gd" id="1_5ng3s"]
+[ext_resource type="Texture2D" uid="uid://kg4fgf64gqby" path="res://assets/sprites/other_objects/heal.png" id="2_wu7w1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(114, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vre1"]
+atlas = ExtResource("2_wu7w1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmkgl"]
+atlas = ExtResource("2_wu7w1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vre1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmkgl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="heal" type="Area2D" unique_id=1382900713]
+script = ExtResource("1_5ng3s")
+
+[node name="healcoll" type="CollisionShape2D" parent="." unique_id=1567221781]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="healsprite" type="AnimatedSprite2D" parent="." unique_id=887463118]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

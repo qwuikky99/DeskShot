@@ -1,0 +1,334 @@
+[gd_scene format=3 uid="uid://bxwt3pr8dpsfe"]
+
+[ext_resource type="Texture2D" uid="uid://my4oq6vswxml" path="res://assets/sprites/backgrounds/stripes.png" id="1_u1gmv"]
+[ext_resource type="Texture2D" uid="uid://cjvbw2r868m1s" path="res://assets/sprites/deskshot_logo.png" id="2_3u8xh"]
+[ext_resource type="Script" uid="uid://bckxn5o5m6dki" path="res://assets/scenes/objects/scripts/ui/mainMenuButtons.gd" id="3_e058f"]
+[ext_resource type="Theme" uid="uid://bm3xdnqrr0frw" path="res://assets/themes/buttons.tres" id="4_mjtbi"]
+[ext_resource type="FontFile" uid="uid://blq2kyj27p1h7" path="res://assets/fonts/roboto mono/RobotoMono-Italic-VariableFont_wght.ttf" id="5_ljqs7"]
+[ext_resource type="Texture2D" uid="uid://b2geestcg7nwk" path="res://assets/sprites/socials/twitter.png" id="6_fkr3g"]
+[ext_resource type="Texture2D" uid="uid://b5stloqs5f53" path="res://assets/sprites/socials/discord.webp" id="7_in8u2"]
+[ext_resource type="Texture2D" uid="uid://ctwleg6ldsfe7" path="res://assets/sprites/socials/github.webp" id="8_61hm4"]
+[ext_resource type="Texture2D" uid="uid://bq5sx3rwflyl0" path="res://assets/sprites/player/player.png" id="9_i8myn"]
+[ext_resource type="Texture2D" uid="uid://bdc7wv34q8415" path="res://assets/sprites/player/aim.png" id="10_n76tw"]
+[ext_resource type="Script" uid="uid://byfxp606oswfr" path="res://assets/scenes/objects/scripts/player/aim.gd" id="11_i1t3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7jxm"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.5647059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8321826, 0.79340476, 0.7470965, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.8352941)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7907916, 0.49872667, 0.14303279, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.7254902)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7108194, 0.53855324, 0.31741992, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.5647059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8321826, 0.79340476, 0.7470965, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4faiu"]
+atlas = ExtResource("9_i8myn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4nn2"]
+atlas = ExtResource("9_i8myn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4faiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4nn2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="menu" type="Node2D" unique_id=1576395696]
+
+[node name="UI" type="Control" parent="." unique_id=260244808]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1501041133]
+modulate = Color(1, 1, 1, 0.30980393)
+layout_mode = 0
+offset_left = -711.86
+offset_top = -621.039
+offset_right = 288.14
+offset_bottom = 1378.9609
+rotation = -0.18849556
+texture = ExtResource("1_u1gmv")
+
+[node name="DeskshotLogo" type="Sprite2D" parent="UI" unique_id=998056206]
+position = Vector2(351, 126)
+scale = Vector2(0.26724997, 0.26724997)
+texture = ExtResource("2_3u8xh")
+
+[node name="Buttons" type="Control" parent="UI" unique_id=1941265183]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_e058f")
+
+[node name="Play" type="Button" parent="UI/Buttons" unique_id=787251020]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 249.0
+offset_right = 400.0
+offset_bottom = 323.0
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7jxm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="UI/Buttons" unique_id=209005288]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 323.0
+offset_right = 389.0
+offset_bottom = 396.9996
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Settings"
+
+[node name="Credits" type="Button" parent="UI/Buttons" unique_id=692346517]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 397.0
+offset_right = 366.0
+offset_bottom = 470.99963
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Credits"
+
+[node name="Twitter" type="Button" parent="UI/Buttons" unique_id=862578184]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 585.0
+offset_right = 186.0
+offset_bottom = 648.0
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_constants/icon_max_width = 38
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+icon = ExtResource("6_fkr3g")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Discord" type="Button" parent="UI/Buttons" unique_id=706120715]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 585.0
+offset_right = 124.0
+offset_bottom = 648.0
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_constants/icon_max_width = 38
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+icon = ExtResource("7_in8u2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GitHub" type="Button" parent="UI/Buttons" unique_id=1998207936]
+layout_mode = 0
+offset_top = 585.0
+offset_right = 62.0
+offset_bottom = 648.0
+theme = ExtResource("4_mjtbi")
+theme_type_variation = &"Crazy"
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_constants/icon_max_width = 38
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_3gngh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+icon = ExtResource("8_61hm4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit" type="Button" parent="UI/Buttons" unique_id=1657127598]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 470.0
+offset_right = 352.0
+offset_bottom = 543.99963
+theme = ExtResource("4_mjtbi")
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_disabled_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_colors/icon_normal_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_focus_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_colors/icon_disabled_color = Color(0.54509807, 0.54509807, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("5_ljqs7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Quit
+"
+
+[node name="player" type="AnimatedSprite2D" parent="." unique_id=1987985889]
+position = Vector2(871.00006, 313)
+scale = Vector2(1.945, 1.945)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="aim" type="Sprite2D" parent="player" unique_id=1545050983]
+position = Vector2(-98.71468, -6.169668)
+scale = Vector2(1.945, 1.945)
+texture = ExtResource("10_n76tw")
+script = ExtResource("11_i1t3l")
+
+[connection signal="pressed" from="UI/Buttons/Play" to="UI/Buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="UI/Buttons/Settings" to="UI/Buttons/Settings" method="_on_pressed"]
+[connection signal="pressed" from="UI/Buttons/Credits" to="UI/Buttons/Credits" method="_on_pressed"]
+[connection signal="pressed" from="UI/Buttons/Twitter" to="UI/Buttons" method="_on_twitter_pressed"]
+[connection signal="pressed" from="UI/Buttons/Discord" to="UI/Buttons" method="_on_discord_pressed"]
+[connection signal="pressed" from="UI/Buttons/GitHub" to="UI/Buttons" method="_on_git_hub_pressed"]
+[connection signal="pressed" from="UI/Buttons/Quit" to="UI/Buttons" method="_on_quit_pressed"]

@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bkys0hk4yepmb"]
+
+[ext_resource type="PackedScene" uid="uid://j6j3lskvy68y" path="res://assets/scenes/objects/player.tscn" id="1_oa584"]
+[ext_resource type="Script" uid="uid://dbcjsvrkhmlgc" path="res://assets/scenes/objects/scripts/gameplay/gameplay-spawning.gd" id="2_0ghvr"]
+[ext_resource type="Script" uid="uid://wig3l1y5fr3b" path="res://assets/scenes/objects/scripts/ui/labels.gd" id="3_te2hq"]
+[ext_resource type="FontFile" uid="uid://blq2kyj27p1h7" path="res://assets/fonts/roboto mono/RobotoMono-Italic-VariableFont_wght.ttf" id="4_xralt"]
+[ext_resource type="FontFile" uid="uid://b2o1pu0x4k2tr" path="res://assets/fonts/roboto mono/RobotoMono-VariableFont_wght.ttf" id="5_q548s"]
+[ext_resource type="Script" uid="uid://cu3y08mc2emt4" path="res://assets/scenes/objects/scripts/ui/death_ui.gd" id="6_d7wd4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("4_xralt")
+font_size = 28
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font = ExtResource("5_q548s")
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hqio"]
+font = ExtResource("4_xralt")
+font_size = 18
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font = ExtResource("4_xralt")
+font_size = 25
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u6y"]
+font = ExtResource("5_q548s")
+font_size = 66
+font_color = Color(1, 0, 0, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.5647059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8321826, 0.79340476, 0.7470965, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.5647059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7907916, 0.49872667, 0.14303279, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(0.050980393, 0.07058824, 0.09019608, 0.5647059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7108194, 0.53855324, 0.31741992, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="main" type="Node2D" unique_id=1471356040]
+
+[node name="player" parent="." unique_id=1304288641 instance=ExtResource("1_oa584")]
+position = Vector2(595, 329)
+
+[node name="bullets" type="Node" parent="." unique_id=1782016720]
+
+[node name="enemies" type="Node" parent="." unique_id=1598940250]
+script = ExtResource("2_0ghvr")
+
+[node name="gameplay_objects" type="Node" parent="." unique_id=1959301893]
+
+[node name="UI" type="Control" parent="." unique_id=169471398]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("3_te2hq")
+
+[node name="kills" type="Label" parent="UI" unique_id=371904163]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Kill count here"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="score" type="Label" parent="UI" unique_id=718679139]
+layout_mode = 0
+offset_top = 47.0
+offset_right = 247.0
+offset_bottom = 98.0
+text = "Score here :3 "
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="level" type="Label" parent="UI" unique_id=124061949]
+layout_mode = 0
+offset_top = 621.0
+offset_right = 274.0
+offset_bottom = 648.0
+text = "Level ;3"
+label_settings = SubResource("LabelSettings_7hqio")
+
+[node name="hp" type="Label" parent="UI" unique_id=1267140664]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 29.0
+text = "HP"
+label_settings = SubResource("LabelSettings_57qmd")
+horizontal_alignment = 2
+
+[node name="deathUI" type="Control" parent="." unique_id=871343767]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_top = -648.0
+offset_right = 1154.0
+script = ExtResource("6_d7wd4")
+
+[node name="DeathTint" type="ColorRect" parent="deathUI" unique_id=971570295]
+layout_mode = 0
+offset_left = -241.0
+offset_top = -312.0
+offset_right = 1393.0
+offset_bottom = 648.0
+color = Color(0.3137255, 0, 0.047058824, 0.22745098)
+
+[node name="YouDied" type="Label" parent="deathUI" unique_id=2118170470]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 358.0
+offset_bottom = 203.0
+text = "You died!"
+label_settings = SubResource("LabelSettings_d0u6y")
+
+[node name="DeathMenuButton" type="Button" parent="deathUI" unique_id=927390206]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 202.0
+offset_right = 251.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("4_xralt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Menu"
+
+[node name="DeathRetryButton" type="Button" parent="deathUI" unique_id=2057847945]
+layout_mode = 0
+offset_top = 283.0
+offset_right = 222.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("4_xralt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Retry"
+
+[node name="DeathQuitButton" type="Button" parent="deathUI" unique_id=1360947996]
+layout_mode = 0
+offset_top = 365.0
+offset_right = 191.0
+offset_bottom = 447.0
+theme_override_colors/font_color = Color(0.83137256, 0.7921569, 0.7490196, 1)
+theme_override_fonts/font = ExtResource("4_xralt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Quit
+"
+
+[connection signal="pressed" from="deathUI/DeathMenuButton" to="deathUI" method="_on_death_menu_button_pressed"]
+[connection signal="pressed" from="deathUI/DeathRetryButton" to="deathUI" method="_on_death_retry_button_pressed"]
+[connection signal="pressed" from="deathUI/DeathQuitButton" to="deathUI" method="_on_death_quit_button_pressed"]

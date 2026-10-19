@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://j6j3lskvy68y"]
+
+[ext_resource type="Script" uid="uid://b1ot7uxpdlm4b" path="res://assets/scenes/objects/scripts/player/player.gd" id="1_5anqq"]
+[ext_resource type="Texture2D" uid="uid://bq5sx3rwflyl0" path="res://assets/sprites/player/player.png" id="2_lrp6o"]
+[ext_resource type="Texture2D" uid="uid://tjw6d2mrwtio" path="res://assets/sprites/player/player_shoot.png" id="3_7hqio"]
+[ext_resource type="Texture2D" uid="uid://bdc7wv34q8415" path="res://assets/sprites/player/aim.png" id="4_7hqio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4faiu"]
+atlas = ExtResource("2_lrp6o")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4nn2"]
+atlas = ExtResource("2_lrp6o")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nvyp"]
+atlas = ExtResource("3_7hqio")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tt3r"]
+atlas = ExtResource("3_7hqio")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4faiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4nn2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nvyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tt3r")
+}],
+"loop": 1,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(36, 37)
+
+[node name="player" type="Area2D" unique_id=473540630]
+script = ExtResource("1_5anqq")
+
+[node name="timer" type="Timer" parent="." unique_id=471696183]
+wait_time = 0.3
+one_shot = true
+
+[node name="plr" type="AnimatedSprite2D" parent="." unique_id=94811734]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="aim" type="Sprite2D" parent="plr" unique_id=1091894301]
+position = Vector2(1.1920929e-07, -105.33333)
+scale = Vector2(1.642, 1.825)
+texture = ExtResource("4_7hqio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350854921]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

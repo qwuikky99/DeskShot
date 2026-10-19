@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://n5felnj60fk"]
+
+[ext_resource type="Script" uid="uid://bif4l7ji1acgo" path="res://assets/scenes/game/scripts/autoload/debug-mode.gd" id="1_d6byh"]
+[ext_resource type="FontFile" uid="uid://blq2kyj27p1h7" path="res://assets/fonts/roboto mono/RobotoMono-Italic-VariableFont_wght.ttf" id="1_go04t"]
+[ext_resource type="Script" uid="uid://ddgjiusyivut1" path="res://assets/scenes/game/scripts/autoload/announce.gd" id="4_pp5rr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_go04t")
+font_size = 23
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font = ExtResource("1_go04t")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u6y"]
+font = ExtResource("1_go04t")
+
+[node name="Control" type="Control" unique_id=1884340702]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d6byh")
+
+[node name="CheatsLabel" type="Label" parent="." unique_id=291959015]
+z_index = 13
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 42.0
+offset_right = 1152.0
+offset_bottom = 74.0
+text = "CHEATS"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="ColorRect" type="ColorRect" parent="CheatsLabel" unique_id=1382957484]
+z_index = -1
+layout_mode = 0
+offset_top = 5.0
+offset_right = 81.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 0.45490196)
+
+[node name="MusicLabel" type="Label" parent="." unique_id=1655906603]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 624.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Music Here :3"
+label_settings = SubResource("LabelSettings_57qmd")
+horizontal_alignment = 2
+
+[node name="AnnouncementLabel" type="Label" parent="." unique_id=1278480820]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 123.0
+offset_bottom = 106.0
+text = "Announcements"
+label_settings = SubResource("LabelSettings_d0u6y")
+script = ExtResource("4_pp5rr")
+metadata/_edit_group_ = true
+
+[node name="BG" type="ColorRect" parent="AnnouncementLabel" unique_id=1391958942]
+z_index = -1
+layout_mode = 0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 21.0
+color = Color(0, 0, 0, 0.45490196)
